@@ -12,6 +12,7 @@ frontend/.env
 # Temporary Execution Folders
 backend/codes/
 backend/inputs/
+backend/outputs/
 backend/a.out
 
 # Build and OS files
