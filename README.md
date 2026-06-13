@@ -41,23 +41,28 @@ This platform leverages a decoupled, scalable architecture meticulously engineer
 * Docker Desktop running in the background
 * OpenAI API Key (or equivalent LLM access tokens)
 
-
 ### 1. Configure and Run Backend
 Create a `.env` file within the `backend/` directory specifying your local execution paths and secret keys:
-`PORT=5000`
-`MONGO_URI=your_mongodb_atlas_uri`
-`JWT_SECRET=your_jwt_signing_key`
-`OPENAI_API_KEY=your_llm_api_key`
+```env
+PORT=5000
+MONGO_URI=your_mongodb_atlas_uri
+JWT_SECRET=your_jwt_signing_key
+OPENAI_API_KEY=your_llm_api_key
+```
 
 Then start the server instance:
-`cd backend`
-`npm install`
-`npm run dev`
+```bash
+cd backend
+npm install
+npm run dev
+```
 
 ### 2. Start Frontend Client
-`cd ../frontend`
-`npm install`
-`npm run dev`
+```bash
+cd ../frontend
+npm install
+npm run dev
+```
 
 ---
 **Built by VIBHU TOMER**
