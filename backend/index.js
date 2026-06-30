@@ -11,13 +11,13 @@ const submitRoutes = require('./routes/submitRoutes');
 
 const app = express();
 
-app.use(express.json());
 app.use(cors({
     origin: function (origin, callback) {
         callback(null, true);
     },
     credentials: true
 }));
+app.use(express.json());
 
 mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log("✅ Secure MongoDB Atlas Connected"))
