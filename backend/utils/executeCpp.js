@@ -19,10 +19,10 @@ const executeCpp = (filepath, inputPath) => {
     return new Promise((resolve, reject) => {
         
         const command = containerInputPath 
-            ? `docker run --rm --memory="256m" --cpus="0.5" --network none -v "${backendDir}":/app gcc:latest bash -c "g++ ${containerCodePath} -o ${containerOutPath} && ${containerOutPath} < ${containerInputPath}"`
-            : `docker run --rm --memory="256m" --cpus="0.5" --network none -v "${backendDir}":/app gcc:latest bash -c "g++ ${containerCodePath} -o ${containerOutPath} && ${containerOutPath}"`;
+            ? `docker run --rm --memory="256m" --network none -v "${backendDir}":/app gcc:latest bash -c "g++ ${containerCodePath} -o ${containerOutPath} && ${containerOutPath} < ${containerInputPath}"`
+            : `docker run --rm --memory="256m" --network none -v "${backendDir}":/app gcc:latest bash -c "g++ ${containerCodePath} -o ${containerOutPath} && ${containerOutPath}"`;
 
-        exec(command, { timeout: 10000 }, (error, stdout, stderr) => {
+        exec(command, { timeout: 20000 }, (error, stdout, stderr) => {
             if (error) {
                 if (error.killed) {
                     return reject("Time Limit Exceeded");
